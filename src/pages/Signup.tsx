@@ -6,16 +6,15 @@ import { hashPassword, validatePassword, setCurrentUser } from '../utils/auth';
 
 const Signup = () => {
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
+    fullName: '',
     email: '',
     phone: '',
     password: '',
     confirmPassword: '',
-    windowType: '',
-    windowSize: '',
+    role: ROLES.USER,
     address: '',
     windowsPerStory: '',
+    windowType: '',
     screens: false,
     tier: '',
   });
@@ -45,11 +44,11 @@ const Signup = () => {
   const validateForm = () => {
     const newErrors = {};
     
-    if (!formData.firstName || !formData.firstName.trim()) {
+    if (!formData.firstName.trim()) {
       newErrors.firstName = 'First name is required';
     }
     
-    if (!formData.lastName || !formData.lastName.trim()) {
+    if (!formData.lastName.trim()) {
       newErrors.lastName = 'Last name is required';
     }
     
@@ -109,7 +108,6 @@ const Signup = () => {
             </div>
           )}
 
-          <form onSubmit={handleSubmit} className="space-y-6">
           <form 
             action="https://formspree.io/f/mrblekzb" 
             method="POST" 
