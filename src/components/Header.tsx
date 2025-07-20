@@ -122,6 +122,14 @@ const Header = () => {
               Contact
             </Link>
             <Link
+              to="/login"
+              className={`font-medium transition-colors ${
+                isActive('/login') ? 'text-primary-600' : 'text-neutral-700 hover:text-primary-600'
+              }`}
+            >
+              Login
+            </Link>
+            <Link
               to="/free-estimate"
               className="bg-accent-500 text-white px-6 py-2 rounded-full font-semibold hover:bg-accent-600 transition-colors"
             >
@@ -176,6 +184,13 @@ const Header = () => {
                 className="font-medium text-neutral-700 hover:text-primary-600"
               >
                 Contact
+              </Link>
+              <Link 
+                to="/login" 
+                onClick={() => setIsMenuOpen(false)}
+                className="font-medium text-neutral-700 hover:text-primary-600"
+              >
+                Login
               </Link>
               <Link
                 to="/free-estimate"
