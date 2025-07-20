@@ -12,7 +12,7 @@ const Footer = () => {
           <div>
             <div className="mb-4">
               <img
-                src="/src/assets/images/squeegee-samurai-logo.jpg"
+                src={logo}
                 alt="Squeegee Samurai Logo"
                 className="h-16 w-auto"
               />
