@@ -112,7 +112,6 @@ const Signup = () => {
           <form 
             action="https://formspree.io/f/mrblekzb" 
             method="POST" 
-            onSubmit={handleSubmit} 
             className="space-y-6"
           >
             <input type="hidden" name="_redirect" value="/thank-you" />
