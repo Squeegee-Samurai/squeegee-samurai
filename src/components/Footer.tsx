@@ -28,11 +28,10 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="text-neutral-400 hover:text-white transition-colors"
               >
-                <Facebook classors"
+                <Facebook className="w-5 h-5" />
+ame="text-neutral-400 hover:text-white transition-colors"
               >
-                <Instagram classite transition-colors"
-              >
-                {/* You can add a Nextdoor SVG icon here00 hover:text-white">About Us</Link></li>
+                {/* Add NextdoorlassName="text-neutral-300 hover:text-white">About Us</Link></li>
               <li><Link to="/services" className="text-neutral-300 hover:text-white">Services</Link></li>
               <li><Link to="/service-areas" className="text-neutral-300 hover:text-white">Service Areas</Link></li>
               <li><Link to="/faq" className="text-neutral-300 hover:text-white">FAQ</Link></li>
