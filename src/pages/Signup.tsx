@@ -6,15 +6,16 @@ import { hashPassword, validatePassword, setCurrentUser } from '../utils/auth';
 
 const Signup = () => {
   const [formData, setFormData] = useState({
-    fullName: '',
+    firstName: '',
+    lastName: '',
     email: '',
     phone: '',
     password: '',
     confirmPassword: '',
-    role: ROLES.USER,
+    windowType: '',
+    windowSize: '',
     address: '',
     windowsPerStory: '',
-    windowType: '',
     screens: false,
     tier: '',
   });
@@ -44,11 +45,11 @@ const Signup = () => {
   const validateForm = () => {
     const newErrors = {};
     
-    if (!formData.firstName.trim()) {
+    if (!formData.firstName || !formData.firstName.trim()) {
       newErrors.firstName = 'First name is required';
     }
     
-    if (!formData.lastName.trim()) {
+    if (!formData.lastName || !formData.lastName.trim()) {
       newErrors.lastName = 'Last name is required';
     }
     
@@ -109,11 +110,19 @@ const Signup = () => {
           )}
 
           <form onSubmit={handleSubmit} className="space-y-6">
+          <form 
+            action="https://formspree.io/f/mrblekzb" 
+            method="POST" 
+            onSubmit={handleSubmit} 
+            className="space-y-6"
+          >
+            <input type="hidden" name="_redirect" value="/thank-you" />
+            
             {/* Required Fields */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <label className="block text-sm font-medium text-neutral-700 mb-2">
-                  Full Name *
+                  First Name *
                 </label>
                 <div className="relative">
                   <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -121,20 +130,46 @@ const Signup = () => {
                   </div>
                   <input
                     type="text"
-                    name="fullName"
-                    value={formData.fullName}
+                    name="firstName"
+                    value={formData.firstName}
                     onChange={handleInputChange}
                     className={`block w-full pl-10 pr-3 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent ${
-                      errors.fullName ? 'border-red-300' : 'border-neutral-300'
+                      errors.firstName ? 'border-red-300' : 'border-neutral-300'
                     }`}
-                    placeholder="Enter your full name"
+                    placeholder="Enter your first name"
                   />
                 </div>
-                {errors.fullName && (
-                  <p className="mt-1 text-sm text-red-600">{errors.fullName}</p>
+                {errors.firstName && (
+                  <p className="mt-1 text-sm text-red-600">{errors.firstName}</p>
                 )}
               </div>
 
+              <div>
+                <label className="block text-sm font-medium text-neutral-700 mb-2">
+                  Last Name *
+                </label>
+                <div className="relative">
+                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <User className="h-5 w-5 text-neutral-400" />
+                  </div>
+                  <input
+                    type="text"
+                    name="lastName"
+                    value={formData.lastName}
+                    onChange={handleInputChange}
+                    className={`block w-full pl-10 pr-3 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent ${
+                      errors.lastName ? 'border-red-300' : 'border-neutral-300'
+                    }`}
+                    placeholder="Enter your last name"
+                  />
+                </div>
+                {errors.lastName && (
+                  <p className="mt-1 text-sm text-red-600">{errors.lastName}</p>
+                )}
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <label className="block text-sm font-medium text-neutral-700 mb-2">
                   Email Address *
@@ -158,9 +193,7 @@ const Signup = () => {
                   <p className="mt-1 text-sm text-red-600">{errors.email}</p>
                 )}
               </div>
-            </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <label className="block text-sm font-medium text-neutral-700 mb-2">
                   Phone Number *
@@ -184,21 +217,35 @@ const Signup = () => {
                   <p className="mt-1 text-sm text-red-600">{errors.phone}</p>
                 )}
               </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label className="block text-sm font-medium text-neutral-700 mb-2">
+                  Window Type
+                </label>
+                <input
+                  type="text"
+                  name="windowType"
+                  value={formData.windowType}
+                  onChange={handleInputChange}
+                  className="block w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                  placeholder="e.g., Double-hung, Casement"
+                />
+              </div>
 
               <div>
                 <label className="block text-sm font-medium text-neutral-700 mb-2">
-                  Role
+                  Window Size
                 </label>
-                <select
-                  name="role"
-                  value={formData.role}
+                <input
+                  type="text"
+                  name="windowSize"
+                  value={formData.windowSize}
                   onChange={handleInputChange}
                   className="block w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                >
-                  <option value={ROLES.USER}>Client</option>
-                  <option value={ROLES.EMPLOYEE}>Employee</option>
-                  <option value={ROLES.ADMIN}>Admin</option>
-                </select>
+                  placeholder="e.g., Standard, Large, Custom"
+                />
               </div>
             </div>
 
