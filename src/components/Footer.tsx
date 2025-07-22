@@ -91,6 +91,34 @@ const Signup = () => {
   };
 
   return (
+<>
+<div className="min-h-screen bg-neutral-50 py-12 px-4 sm:px-6 lg:px-8">
+      {/* Hidden form for Netlify to detect */}
+      <form name="signup" netlify netlify-honeypot="bot-field" hidden>
+        <input type="text" name="firstName" />
+        <input type="text" name="lastName" />
+        <input type="email" name="email" />
+        <input type="tel" name="phone" />
+        <input type="text" name="windowType" />
+        <input type="text" name="windowSize" />
+        <input type="text" name="address" />
+        <input type="number" name="windowsPerStory" />
+        <input type="text" name="tier" />
+        <input type="checkbox" name="screens" />
+        <input type="password" name="password" />
+        <input type="password" name="confirmPassword" />
+      </form>
+
+      <div className="max-w-2xl mx-auto">
+        <div className="text-center mb-8">
+          <UserPlus className="mx-auto h-12 w-12 text-primary-600" />
+          <h2 className="mt-6 text-3xl font-bold text-neutral-900">
+            Create your account
+          </h2>
+          <p className="mt-2 text-sm text-neutral-600">
+            Join the Squeegee Samurai portal
+          </p>
+        </div>
 
         <div className="bg-white rounded-lg shadow-lg p-8">
           {errors.general && (
@@ -425,7 +453,8 @@ const Signup = () => {
         </div>
       </div>
     </div>
-  );
+</>
+);
 };
 
 export default Signup;
