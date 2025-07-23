@@ -15,8 +15,22 @@ const Footer = () => {
               Bringing the precision and dedication of the samurai to modern window cleaning.
             </p>
             <div className="flex space-x-4">
-              https://facebook.com/squeegeesamurai
-              https://instagram.com/squeegeesamurai
+              <a
+                href="https://facebook.com/squeegeesamurai"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-neutral-300 hover:text-white transition-colors"
+              >
+                <Facebook className="w-6 h-6" />
+              </a>
+              <a
+                href="https://instagram.com/squeegeesamurai"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-neutral-300 hover:text-white transition-colors"
+              >
+                <Instagram className="w-6 h-6" />
+              </a>
             </div>
           </div>
 
