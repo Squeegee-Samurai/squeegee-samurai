@@ -16,8 +16,9 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <a href="https://facebook.com/squeegeesamurai" target="_blank" rel="noopener noreferrer">
-                <Facebook className="w-6 h-6errer">
-                <Instagram className="w-6 h-6 text-neutral-300 hover:textibold mb-4">Quick Links</h4>
+                <Facebook className="w        {/* Quick Links */}
+          <div>
+            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li><Link to="/" className="text-neutral-300 hover:text-white transition-colors">Home</Link></li>
               <li><Link to="/about" className="text-neutral-300 hover:text-white transition-colors">About</Link></li>
