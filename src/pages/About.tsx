@@ -148,53 +148,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* Team Section */}
-      <section className="py-16 bg-primary-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-neutral-900 mb-4">Meet Our Team</h2>
-            <p className="text-lg text-neutral-600">Dedicated professionals committed to excellence</p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-md text-center">
-              <div className="w-24 h-24 bg-primary-600 rounded-full mx-auto mb-4 flex items-center justify-center text-white text-2xl font-bold">
-                MK
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Mike Katana</h3>
-              <p className="text-primary-600 font-medium mb-3">Founder & Lead Samurai</p>
-              <p className="text-neutral-600 text-sm">
-                With over 10 years in the cleaning industry, Mike founded Squeegee Samurai to bring 
-                honor and excellence to window cleaning.
-              </p>
-            </div>
-            
-            <div className="bg-white p-6 rounded-lg shadow-md text-center">
-              <div className="w-24 h-24 bg-primary-600 rounded-full mx-auto mb-4 flex items-center justify-center text-white text-2xl font-bold">
-                SN
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Sarah Ninja</h3>
-              <p className="text-primary-600 font-medium mb-3">Operations Manager</p>
-              <p className="text-neutral-600 text-sm">
-                Sarah ensures every job meets our high standards and coordinates our team's 
-                scheduling and quality control.
-              </p>
-            </div>
-            
-            <div className="bg-white p-6 rounded-lg shadow-md text-center">
-              <div className="w-24 h-24 bg-primary-600 rounded-full mx-auto mb-4 flex items-center justify-center text-white text-2xl font-bold">
-                DW
-              </div>
-              <h3 className="text-xl font-semibold mb-2">David Warrior</h3>
-              <p className="text-primary-600 font-medium mb-3">Senior Technician</p>
-              <p className="text-neutral-600 text-sm">
-                David specializes in commercial and high-rise window cleaning, bringing precision 
-                and safety to every project.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 };
