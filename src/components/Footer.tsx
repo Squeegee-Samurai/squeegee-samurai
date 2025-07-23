@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Facebook, Instagram } from 'lucide-react';
-import NextdoorIcon from '../assets/images/icon.svg';
+import { ReactComponent as NextdoorIcon } from '../assets/images/icon.svg';
 
 const Footer = () => {
   return (
@@ -16,36 +16,13 @@ const Footer = () => {
               Bringing the precision and dedication of the samurai to modern window cleaning.
             </p>
             <div className="flex space-x-4">
-              <a
-                href="https://facebook.com/squeegeesamurai"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-neutral-300 hover:text-white transition-colors"
-              >
-                <Facebook className="w-6 h-6" />
-              </a>
-              <a
-                href="https://nextdoor.com/pages/squeegee-samurai-leesburg-va/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-neutral-300 hover:text-white transition-colors"
-              >
-                <NextdoorIcon className="w-6 h-6" />
-              </a>
+              https://facebook.com/squeegeesamurai
+              https://nextdoor.com/pages/squeegee-samurai-leesburg-va/
               <a
                 href="https://instagram.com/squeegeesamurai"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-neutral-300 hover:text-white transition-colors"
-              >
-                <Instagram className="w-6 h-6" />
-              </a>
-            </div>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
+                classNamemibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li><Link to="/" className="text-neutral-300 hover:text-white transition-colors">Home</Link></li>
               <li><Link to="/about" className="text-neutral-300 hover:text-white transition-colors">About</Link></li>
