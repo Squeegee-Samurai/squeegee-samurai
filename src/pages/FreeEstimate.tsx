@@ -24,7 +24,7 @@ const FreeEstimate = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
   const windowCount = parseInt(formData.windowCount) || 0;
   const screenCount = parseInt(formData.screenCount) || 0;
-  const estimatedQuote = (windowCount * 10) + (screenCount * 5);
+  const estimatedQuote = (windowCount * 10) + (screenCount * 5) + 50;
 
     const templateParams = {
     firstName: formData.firstName,
