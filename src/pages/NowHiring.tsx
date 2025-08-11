@@ -14,6 +14,9 @@ const NowHiring = () => {
     message: ''
   });
 
+    const [isSubmitted, setIsSubmitted] = useState(false);
+  
+
   const jobs = [
     {
       id: 1,
@@ -103,17 +106,42 @@ const NowHiring = () => {
     e.preventDefault();
     // Here you would typically send the application data to your backend
 
-    console.log('Application submitted:', applicationData);
-    alert('Thank you for your application! We\'ll be in touch soon.');
-    setApplicationData({
-      name: '',
-      email: '',
-      phone: '',
-      position: '',
-      experience: '',
-      availability: '',
-      message: ''
+    const templateParams = {
+      fullName: applicationData.name,
+      emailAdd: applicationData.email,
+      phoneNum: applicationData.phone,
+      subject: `Job Inquiry: ${applicationData.position}`,
+      message: `
+        Experience: ${applicationData.experience}
+        Availability: ${applicationData.availability}
+        Message: ${applicationData.message}
+      `
+    };
+
+    emailjs.send(
+        'service_smyhfg9',      
+        'template_tiv6cho',     
+        templateParams,
+        'tP8oeE5EOGJQXkvGp'      
+      )
+      .then(() => {
+        setIsSubmitted(true);   
+        console.log('Application submitted:', applicationData);
+        alert('Thank you for your application! We\'ll be in touch soon.');
+        setApplicationData({
+          name: '',
+          email: '',
+          phone: '',
+          position: '',
+          experience: '',
+          availability: '',
+          message: ''
     });
+      })
+      .catch((error) => {
+        alert('Failed to send message: ' + error.text);
+        console.error('EmailJS error:', error);
+      });
   };
 
   return (
