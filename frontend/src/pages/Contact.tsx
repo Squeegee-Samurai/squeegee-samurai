@@ -29,6 +29,8 @@ const Contact = () => {
         phoneNum: formData.phone,
         subject: formData.subject,
         message: formData.message,
+        formType: 'Contact Form',
+
       };
 
       emailjs.send(
