@@ -34,10 +34,10 @@ const Contact = () => {
       };
 
       emailjs.send(
-        'service_kbpzqjx',      
-        'template_2pclpef',     
+        'service_smyhfg9',      
+        'template_tiv6cho',     
         templateParams,
-        'evFRXqG19P9hQMhwR'      
+        'tP8oeE5EOGJQXkvGp'      
       )
       .then(() => {
         setIsSubmitted(true);   
