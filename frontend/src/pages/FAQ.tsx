@@ -103,7 +103,7 @@ const FAQ = () => {
         },
         {
           question: "Can you clean high-rise windows?",
-          answer: "Yes, we have the specialized equipment and training to safely clean windows on multi-story buildings and high-rise properties."
+          answer: "No, we clean windows up to the third story but have partners we can refer you to for high-rise work."
         },
         {
           question: "Do you offer after-hours service?",
