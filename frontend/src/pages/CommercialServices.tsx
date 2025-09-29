@@ -43,8 +43,8 @@ const CommercialServices = () => {
                 <div className="flex items-start">
                   <CheckCircle className="w-6 h-6 text-accent-500 mr-4 mt-1" />
                   <div>
-                    <h4 className="font-semibold text-neutral-900">High-Rise Window Cleaning</h4>
-                    <p className="text-neutral-600">Specialized equipment and safety protocols for multi-story buildings and high-rise properties.</p>
+                    <h4 className="font-semibold text-neutral-900">3rd story Window Cleaning</h4>
+                    <p className="text-neutral-600">Specialized equipment and safety protocols for properties upto the 3rd story.</p>
                   </div>
                 </div>
                 
