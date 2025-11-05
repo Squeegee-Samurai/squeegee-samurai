@@ -13,7 +13,7 @@ import { useMemo } from "react";
 const PHONE_DISPLAY = "540-335-1059";
 const PHONE_TEL = "5403351059";
 const EMAIL = "james@squeegee-samurai.com";
-const HERO_IMG = "/images/holiday/hero.jpg"; // put an image here; see notes below
+const HERO_IMG = "/images/holiday/hero.jpg"; // Put a file here in Step 3
 
 export default function HolidayLighting() {
   const title = "Holiday Decorations & Lighting Services | Loudoun County, VA";
@@ -45,8 +45,7 @@ export default function HolidayLighting() {
     {
       icon: <Lightbulb className="h-6 w-6 text-amber-600" aria-hidden />,
       title: "Custom Lighting Installation",
-      desc:
-        "Classic white or colorful displays—designed to fit your property and style.",
+      desc: "Classic white or colorful displays—designed to fit your property and style.",
     },
     {
       icon: <Sparkles className="h-6 w-6 text-sky-600" aria-hidden />,
@@ -57,8 +56,7 @@ export default function HolidayLighting() {
     {
       icon: <PackageOpen className="h-6 w-6 text-emerald-600" aria-hidden />,
       title: "Removal & Storage",
-      desc:
-        "Safe takedown, packing, and storage so next year is hassle‑free.",
+      desc: "Safe takedown, packing, and storage so next year is hassle‑free.",
     },
     {
       icon: <Building2 className="h-6 w-6 text-indigo-600" aria-hidden />,
@@ -69,8 +67,7 @@ export default function HolidayLighting() {
     {
       icon: <Wrench className="h-6 w-6 text-rose-600" aria-hidden />,
       title: "Maintenance & Repairs",
-      desc:
-        "Keep your display bright all season with prompt support.",
+      desc: "Keep your display bright all season with prompt support.",
     },
   ];
 
@@ -89,7 +86,13 @@ export default function HolidayLighting() {
     { title: "Removal & Storage", desc: "We return to take down and store your decor." },
   ];
 
-  const serviceArea = ["Leesburg", "Ashburn", "Sterling", "Purcellville", "Nearby communities"];
+  const serviceArea = [
+    "Leesburg",
+    "Ashburn",
+    "Sterling",
+    "Purcellville",
+    "Nearby communities",
+  ];
 
   return (
     <main className="min-h-screen bg-white text-slate-900">
@@ -99,8 +102,14 @@ export default function HolidayLighting() {
         <meta name="description" content={description} />
         <link rel="canonical" href={canonical} />
         {/* Open Graph */}
-        <meta property="og:title" content="Holiday Lighting & Decorations in Loudoun County" />
-        <meta property="og:description" content="Design, installation, maintenance, removal & storage." />
+        <meta
+          property="og:title"
+          content="Holiday Lighting & Decorations in Loudoun County"
+        />
+        <meta
+          property="og:description"
+          content="Design, installation, maintenance, removal & storage."
+        />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={canonical} />
         <meta property="og:image" content={HERO_IMG} />
@@ -124,7 +133,7 @@ export default function HolidayLighting() {
               <div className="mt-6 flex flex-wrap gap-3">
                 <a
                   href="#quote"
-                  className="inline-flex items-center justify-center rounded-md bg-slate-900 px-4 py-2 text-white shadow hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-slate- px-4 py-2 text-slate-900 hover:bg-slate-200 focus:outline-none focus:ring-2 focus:ring-slate-300"
+                  className="inline-flex items-center justify-center rounded-md bg-slate-900 px-4 py-2 text-white shadow hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-400-4 py-2 text-slate-900 hover:bg-slate-200 focus:outline-none focus:ring-2 focus:ring-slate-300"
                 >
                   <Phone className="h-4 w-4" aria-hidden /> Call {PHONE_DISPLAY}
                 </a>
@@ -132,7 +141,7 @@ export default function HolidayLighting() {
             </div>
 
             <div className="order-1 overflow-hidden rounded-xl border border-slate-200 lg:order-2">
-              {/* Use your own photo: 1600x900 recommended */}
+              {/* Put your own photo at /public/images/holiday/hero.jpg */}
               <img
                 src={HERO_IMG}
                 alt="Warm holiday lights installed on a Loudoun County home"
@@ -173,10 +182,7 @@ export default function HolidayLighting() {
           <h2 className="text-2xl font-semibold tracking-tight">Why Choose Squeegee Samurai?</h2>
           <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {reasons.map((r) => (
-              <li
-                key={r.title}
-                className="rounded-xl border border-slate-200 p-5"
-              >
+              <li key={r.title} className="rounded-xl border border-slate-200 p-5">
                 <div className="flex items-start gap-2">
                   <CheckCircle2 className="mt-0.5 h-5 w-5 text-emerald-600" aria-hidden />
                   <div>
@@ -196,10 +202,7 @@ export default function HolidayLighting() {
           <h2 className="text-2xl font-semibold tracking-tight">How It Works</h2>
           <ol className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
             {steps.map((step, i) => (
-              <li
-                key={step.title}
-                className="rounded-xl border border-slate-200 p-5"
-              >
+              <li key={step.title} className="rounded-xl border border-slate-200 p-5">
                 <div className="text-sm font-semibold text-slate-500">Step {i + 1}</div>
                 <div className="mt-1 font-semibold">{step.title}</div>
                 <p className="mt-1 text-sm text-slate-600">{step.desc}</p>
@@ -246,9 +249,6 @@ export default function HolidayLighting() {
               </a>
             </p>
           </div>
-
-          {/* Optional: inline QuoteForm here */}
-          {/* <QuoteForm /> */}
         </div>
       </section>
     </main>
