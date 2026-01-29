@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown, Phone, Sparkles } from "lucide-react";
@@ -79,7 +78,10 @@ export default function Header() {
   return (
     <>
       {/* Skip to content for keyboard users */}
-      <main
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-slate-900 focus:shadow"
+      >
         Skip to content
       </a>
 
@@ -89,7 +91,10 @@ export default function Header() {
             {/* Left: Logo */}
             <div className="flex items-center gap-2">
               <Link to="/" className="group flex items-center gap-2">
-                <Sparkles className="h-6 w-6 text-slate-900 transition-colors group-hover:text-slate-700" />
+                <Sparkles
+                  className="h-6 w-6 text-slate-900 transition-colors group-hover:text-slate-700"
+                  aria-hidden="true"
+                />
                 <span className="text-base font-semibold tracking-tight text-slate-900">
                   Squeegee Samurai
                 </span>
@@ -127,7 +132,7 @@ export default function Header() {
                           "ml-1 h-4 w-4 transition-transform",
                           servicesOpen && "rotate-180"
                         )}
-                        aria-hidden
+                        aria-hidden="true"
                       />
                     </button>
 
@@ -208,7 +213,7 @@ export default function Header() {
                 href={`tel:${PHONE_TEL}`}
                 className="ml-2 hidden items-center gap-2 rounded-md border border-slate-200 bg-white px-3 py-2 text-sm font-medium text-slate-900 hover:bg-slate-50 lg:inline-flex"
               >
-                <Phone className="h-4 w-4" aria-hidden />
+                <Phone className="h-4 w-4" aria-hidden="true" />
                 {PHONE_DISPLAY}
               </a>
             </nav>
@@ -220,7 +225,7 @@ export default function Header() {
                 className="mr-2 inline-flex items-center gap-2 rounded-md border border-slate-200 bg-white px-3 py-2 text-sm font-medium text-slate-900 hover:bg-slate-50"
                 aria-label={`Call ${PHONE_DISPLAY}`}
               >
-                <Phone className="h-4 w-4" aria-hidden />
+                <Phone className="h-4 w-4" aria-hidden="true" />
               </a>
 
               <button
@@ -231,7 +236,7 @@ export default function Header() {
                 onClick={() => setMobileOpen(true)}
                 className="inline-flex items-center justify-center rounded-md p-2 text-slate-700 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-slate-400"
               >
-                <Menu className="h-6 w-6" />
+                <Menu className="h-6 w-6" aria-hidden="true" />
               </button>
             </div>
           </div>
@@ -264,7 +269,7 @@ export default function Header() {
               className="flex items-center gap-2"
               onClick={() => setMobileOpen(false)}
             >
-              <Sparkles className="h-6 w-6 text-slate-900" />
+              <Sparkles className="h-6 w-6 text-slate-900" aria-hidden="true" />
               <span className="text-base font-semibold tracking-tight text-slate-900">
                 Squeegee Samurai
               </span>
@@ -275,7 +280,7 @@ export default function Header() {
               onClick={() => setMobileOpen(false)}
               className="inline-flex items-center justify-center rounded-md p-2 text-slate-700 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-slate-400"
             >
-              <X className="h-6 w-6" />
+              <X className="h-6 w-6" aria-hidden="true" />
             </button>
           </div>
 
@@ -287,7 +292,7 @@ export default function Header() {
                     <details>
                       <summary className="flex cursor-pointer list-none items-center justify-between rounded-lg bg-white px-3 py-2 text-sm font-medium text-slate-800">
                         <span>{item.label}</span>
-                        <ChevronDown className="h-4 w-4" />
+                        <ChevronDown className="h-4 w-4" aria-hidden="true" />
                       </summary>
                       <div className="border-t border-slate-100">
                         <MobileLink to="/services" onClick={() => setMobileOpen(false)}>
@@ -343,7 +348,7 @@ export default function Header() {
                 href={`tel:${PHONE_TEL}`}
                 className="inline-flex items-center justify-center gap-2 rounded-md border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-900 hover:bg-slate-50"
               >
-                <Phone className="h-4 w-4" aria-hidden />
+                <Phone className="h-4 w-4" aria-hidden="true" />
                 {PHONE_DISPLAY}
               </a>
             </div>
@@ -401,3 +406,4 @@ function MobileLink({
     </NavLink>
   );
 }
+``
