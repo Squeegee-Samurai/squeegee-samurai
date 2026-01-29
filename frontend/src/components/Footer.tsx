@@ -9,7 +9,7 @@ const EMAIL = "james@squeegee-samurai.com";
 export default function Footer() {
   return (
     <footer className="bg-neutral-900 text-white" role="contentinfo">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           {/* Company Info */}
           <div className="md:col-span-2">
@@ -20,12 +20,25 @@ export default function Footer() {
               dedication of the samurai to modern window cleaning.
             </p>
 
-            <div className="flex space-x-4">
-              https://facebook.com/squeegeesamurai
-                <Facebook className="h-6 w-6" aria-hidden />
+            <div className="flex items-center space-x-4">
+              <a
+                href="https://facebook.com/squeegeesamurai"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Squeegee Samurai on Facebook"
+                className="text-neutral-300 hover:text-white"
+              >
+                <Facebook className="h-6 w-6" aria-hidden="true" />
               </a>
-              https://instagram.com/squeegeesamurai
-                <Instagram className="h-6 w-6" aria-hidden />
+
+              <a
+                href="https://instagram.com/squeegeesamurai"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Squeegee Samurai on Instagram"
+                className="text-neutral-300 hover:text-white"
+              >
+                <Instagram className="h-6 w-6" aria-hidden="true" />
               </a>
             </div>
           </div>
@@ -34,17 +47,85 @@ export default function Footer() {
           <div>
             <h4 className="mb-4 text-lg font-semibold">Quick Links</h4>
             <ul className="space-y-2">
-              <li><Link to="/" className="text-neutral-300 hover:text-white">Home</Link></li>
-              <li><Link to="/about" className="text-neutral-300 hover:text-white">About</Link></li>
-              <li><Link to="/services" className="text-neutral-300 hover:text-white">Services</Link></li>
-              <li><Link to="/services/residential" className="text-neutral-300 hover:text-white">Residential Services</Link></li>
-              <li><Link to="/services/commercial" className="text-neutral-300 hover:text-white">Commercial Services</Link></li>
-              <li><Link to="/service-areas" className="text-neutral-300 hover:text-white">Service Areas</Link></li>
-              <li><Link to="/holiday-lighting" className="text-neutral-300 hover:text-white">Holiday Lighting</Link></li>
-              <li><Link to="/faq" className="text-neutral-300 hover:text-white">FAQ</Link></li>
-              <li><Link to="/contact" className="text-neutral-300 hover:text-white">Contact</Link></li>
-              <li><Link to="/now-hiring" className="text-neutral-300 hover:text-white">Now Hiring</Link></li>
-              <li><Link to="/free-estimate" className="text-neutral-300 hover:text-white">Free Estimate</Link></li>
+              <li>
+                <Link to="/" className="text-neutral-300 hover:text-white">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link to="/about" className="text-neutral-300 hover:text-white">
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/services"
+                  className="text-neutral-300 hover:text-white"
+                >
+                  Services
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/services/residential"
+                  className="text-neutral-300 hover:text-white"
+                >
+                  Residential Services
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/services/commercial"
+                  className="text-neutral-300 hover:text-white"
+                >
+                  Commercial Services
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/service-areas"
+                  className="text-neutral-300 hover:text-white"
+                >
+                  Service Areas
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/holiday-lighting"
+                  className="text-neutral-300 hover:text-white"
+                >
+                  Holiday Lighting
+                </Link>
+              </li>
+              <li>
+                <Link to="/faq" className="text-neutral-300 hover:text-white">
+                  FAQ
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/contact"
+                  className="text-neutral-300 hover:text-white"
+                >
+                  Contact
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/now-hiring"
+                  className="text-neutral-300 hover:text-white"
+                >
+                  Now Hiring
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/free-estimate"
+                  className="text-neutral-300 hover:text-white"
+                >
+                  Free Estimate
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -53,7 +134,7 @@ export default function Footer() {
             <h4 className="mb-4 text-lg font-semibold">Contact Info</h4>
             <div className="space-y-3">
               <div className="flex items-center">
-                <Phone className="mr-3 h-5 w-5 text-slate-400" aria-hidden />
+                <Phone className="mr-3 h-5 w-5 text-slate-400" aria-hidden="true" />
                 <a
                   href={`tel:${PHONE_TEL}`}
                   className="text-neutral-300 hover:text-white"
@@ -61,8 +142,9 @@ export default function Footer() {
                   {PHONE_DISPLAY}
                 </a>
               </div>
+
               <div className="flex items-center">
-                <Mail className="mr-3 h-5 w-5 text-slate-400" aria-hidden />
+                <Mail className="mr-3 h-5 w-5 text-slate-400" aria-hidden="true" />
                 <a
                   href={`mailto:${EMAIL}`}
                   className="text-neutral-300 hover:text-white"
@@ -70,8 +152,12 @@ export default function Footer() {
                   {EMAIL}
                 </a>
               </div>
+
               <div className="flex items-start">
-                <MapPin className="mr-3 mt-1 h-5 w-5 text-slate-400" aria-hidden />
+                <MapPin
+                  className="mr-3 mt-1 h-5 w-5 text-slate-400"
+                  aria-hidden="true"
+                />
                 <span className="text-neutral-300">
                   Serving Loudoun County, Virginia
                 </span>
